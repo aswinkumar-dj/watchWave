@@ -3,5 +3,5 @@ export const PROFILE_URL =
 export const HAMBURGER_ICON_URL = "http://www.w3.org/2000/svg";
 const YT_API_KEY = import.meta.env.VITE_YT_API_KEY;
 export const YOUTUBE_VIDEO_API =
-  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=US&key=" +
+  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=US&key=" +
   YT_API_KEY;

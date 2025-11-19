@@ -5,12 +5,12 @@ const VideoCard = ({ info }) => {
   const { channelTitle, title, thumbnails } = snippet;
 
   return (
-    <div className="hover:bg-black/20 rounded-xl p-1 m-2 transition-colors duration-300">
-      <div className="w-72 sm:w-64 md:w-72 lg:w-80 m-2 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 bg-base-300">
+    <div className="hover:bg-black/20 rounded-xl p-1 transition-colors duration-300">
+      <div className="w-72 sm:w-64 md:w-72  m-2 cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 bg-base-300">
         <img
           alt="thumbnail"
           src={thumbnails?.medium?.url}
-          className="w-full h-44 object-cover"
+          className="w-full object-cover"
         />
 
         <div className="p-3">

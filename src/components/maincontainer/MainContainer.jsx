@@ -3,7 +3,7 @@ import VideoContainer from "./VideoContainer";
 
 const MainContainer = () => {
   return (
-    <div>
+    <div className="mx-8">
       <VideoContainer />
     </div>
   );

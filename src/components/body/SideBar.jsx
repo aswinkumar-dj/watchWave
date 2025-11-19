@@ -18,7 +18,7 @@ const SideBar = () => {
     "History",
   ];
   return (
-    <div className="w-50 min-w-50 shrink-0 h-screen bg-base-200 border-r border-gray-600 p-4 overflow-y-auto no-scrollbar ">
+    <div className="w-50 min-w-50 shrink-0 h-screen bg-base-100 border-r border-gray-600 p-4 overflow-y-auto no-scrollbar ">
       <div className="mb-6">
         <ul className="space-y-1">
           {content.map((item, index) => (
