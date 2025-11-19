@@ -6,6 +6,7 @@ const useToggleSideBar = create(
     isSideBarOpen: true,
     toggleSideBar: () =>
       set((state) => ({ isSideBarOpen: !state.isSideBarOpen })),
+    closeSideBar: () => set({ isSideBarOpen: false }),
   }))
 );
 
