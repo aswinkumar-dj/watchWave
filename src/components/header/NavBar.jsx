@@ -1,11 +1,15 @@
 import SearchBar from "./SearchBar";
-import { HAMBURGER_ICON_URL, PROFILE_URL } from "../../constants/utils";
+import { HAMBURGER_ICON_URL, PROFILE_URL } from "../../utils/constants";
+
+import useToggleSideBar from "../../utils/toggleSideBar";
 
 const NavBar = () => {
+  const handleToggle = useToggleSideBar((state) => state.toggleSideBar);
+
   return (
     <div className="navbar bg-base-800 shadow-lg ">
       <div className="flex-none">
-        <button className="btn btn-square btn-ghost">
+        <button className="btn btn-square btn-ghost" onClick={handleToggle}>
           <svg
             xmlns={HAMBURGER_ICON_URL}
             fill="none"

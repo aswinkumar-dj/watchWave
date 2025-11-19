@@ -1,4 +1,9 @@
+import useToggleSideBar from "../../utils/toggleSideBar";
+
 const SideBar = () => {
+  const isSideBarOpen = useToggleSideBar((state) => state.isSideBarOpen);
+  if (!isSideBarOpen) return null;
+
   const content = ["Home", "Shorts", "Subscriptions", "YouTube Music"];
   const explore = [
     "Trending",
