@@ -26,7 +26,9 @@ const NavBar = () => {
         </button>
       </div>
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl">🍃 WatchWave</a>
+        <a className="btn btn-ghost text-xl" href="/">
+          🍃 WatchWave
+        </a>
       </div>
       <div className="flex-2">
         <SearchBar />

@@ -4,7 +4,7 @@ const SideBar = () => {
   const isSideBarOpen = useToggleSideBar((state) => state.isSideBarOpen);
   if (!isSideBarOpen) return null;
 
-  const content = ["Home", "Shorts", "Subscriptions", "YouTube Music"];
+  const content = ["Shorts", "Subscriptions", "YouTube Music"];
   const explore = [
     "Trending",
     "Shopping",
@@ -21,6 +21,11 @@ const SideBar = () => {
     <div className="w-50 min-w-50 shrink-0 h-screen bg-base-100 border-r border-gray-600 p-4 overflow-y-auto no-scrollbar ">
       <div className="mb-6">
         <ul className="space-y-1">
+          <a href="/">
+            <li className="cursor-pointer hover:bg-black/30 p-2 rounded-lg font-medium text-sm transition-colors duration-300">
+              Home
+            </li>
+          </a>
           {content.map((item, index) => (
             <li
               key={index}
