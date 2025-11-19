@@ -1,9 +1,26 @@
-import React from "react";
 import SearchBar from "./SearchBar";
+import { HAMBURGER_ICON_URL, PROFILE_URL } from "../../constants/utils";
 
 const NavBar = () => {
   return (
     <div className="navbar bg-base-800 shadow-lg ">
+      <div className="flex-none">
+        <button className="btn btn-square btn-ghost">
+          <svg
+            xmlns={HAMBURGER_ICON_URL}
+            fill="none"
+            viewBox="0 0 24 24"
+            className="inline-block h-5 w-5 stroke-current"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
       <div className="flex-1">
         <a className="btn btn-ghost text-xl">🍃 WatchWave</a>
       </div>
@@ -18,10 +35,7 @@ const NavBar = () => {
             className="btn btn-ghost btn-circle avatar"
           >
             <div className="w-10 rounded-full">
-              <img
-                alt="Tailwind CSS Navbar component"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-              />
+              <img alt="Tailwind CSS Navbar component" src={PROFILE_URL} />
             </div>
           </div>
           <ul
