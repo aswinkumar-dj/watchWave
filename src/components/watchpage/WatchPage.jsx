@@ -17,7 +17,7 @@ const WatchPage = () => {
   return (
     <div className="md:mx-20  mx-5 md:mb-5 mb-2 mt-18">
       <iframe
-        width="900"
+        width="890"
         height="500"
         className="rounded-xl"
         src={"https://www.youtube.com/embed/" + videoId + "?autoplay=1"}

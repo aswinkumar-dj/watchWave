@@ -11,3 +11,6 @@ export function formatNumber(num) {
   if (num >= 1_000) return (num / 1_000).toFixed(1) + "K";
   return num;
 }
+
+export const YOUTUBE_SEARCH_API =
+  "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
