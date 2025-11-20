@@ -45,6 +45,16 @@ const VideoDetails = ({ videoId }) => {
           {subscribe}
         </button>
       </div>
+      <details className="collapse bg-black/30">
+        <summary className="collapse-title text-xl font-semibold">
+          ⬇️ Description
+        </summary>
+        <div className="collapse-content text-sm ">
+          <p className="whitespace-pre-wrap wrap-break-word">
+            {videoData.items[0]?.snippet?.description}
+          </p>
+        </div>
+      </details>
     </div>
   );
 };
