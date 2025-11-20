@@ -14,7 +14,13 @@ const VideoDetails = ({ videoId }) => {
     setVideoData(result);
   };
   if (!videoData) return null;
-  return <div>{videoData.items[0]?.snippet?.title}</div>;
+  return (
+    <div className="w-225 h-200 my-4 borderr px-2 border-white">
+      <h1 className="font-bold text-xl">
+        {videoData.items[0]?.snippet?.title}
+      </h1>
+    </div>
+  );
 };
 
 export default VideoDetails;

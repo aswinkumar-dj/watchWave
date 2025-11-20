@@ -7,7 +7,7 @@ const NavBar = () => {
   const handleToggle = useToggleSideBar((state) => state.toggleSideBar);
 
   return (
-    <div className="navbar bg-base-800 shadow-lg ">
+    <div className="navbar bg-base-200/30 shadow-lg fixed z-50 backdrop-blur-2xl">
       <div className="flex-none">
         <button className="btn btn-square btn-ghost" onClick={handleToggle}>
           <svg

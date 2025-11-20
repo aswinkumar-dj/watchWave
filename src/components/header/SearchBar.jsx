@@ -4,9 +4,9 @@ const SearchBar = () => {
       <input
         type="text"
         placeholder="Search"
-        className="border border-gray-600 w-24 md:w-140 rounded-l-lg px-4 py-2"
+        className="border border-gray-600 w-24 md:w-140 rounded-l-lg px-4 py-2 bg-base-200"
       />
-      <button className="border border-gray-600 px-3 py-2 border-l-0 rounded-r-lg hover:bg-gray-700">
+      <button className="border border-gray-600 px-3 py-2 border-l-0 rounded-r-lg hover:bg-gray-700 bg-base-200">
         🔍
       </button>
     </div>

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const VideoContainer = () => {
   const [videos, setVideos] = useState([]);
   useEffect(() => {
-    getVideos();
+    setTimeout(() => getVideos(), 1000);
   }, []);
 
   const getVideos = async () => {
@@ -15,7 +15,7 @@ const VideoContainer = () => {
 
     setVideos(result.items);
   };
-  if (videos.length === 0) return null;
+  if (videos.length === 0) return <h1>Loading...</h1>;
   return (
     <div className="flex flex-wrap">
       {videos.map((video) => (
