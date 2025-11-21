@@ -4,6 +4,7 @@ import Body from "./components/body/Body";
 import Header from "./components/header/Header";
 import MainContainer from "./components/maincontainer/MainContainer";
 import WatchPage from "./components/watchpage/WatchPage";
+import SearchContainer from "./components/maincontainer/SearchContainer";
 
 const appRouter = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/watch",
         element: <WatchPage />,
+      },
+      {
+        path: "/search",
+        element: <SearchContainer />,
       },
     ],
   },

@@ -1,5 +1,6 @@
 import React from "react";
 import VideoContainer from "./VideoContainer";
+import SearchContainer from "./SearchContainer";
 
 const MainContainer = () => {
   return (
