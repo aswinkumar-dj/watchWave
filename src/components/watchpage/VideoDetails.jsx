@@ -49,7 +49,7 @@ const VideoDetails = ({ videoId }) => {
         <summary className="collapse-title text-xl font-semibold">
           ⬇️ Description
         </summary>
-        <div className="collapse-content text-sm ">
+        <div className="collapse-content text-md  text-gray-400">
           <p className="whitespace-pre-wrap wrap-break-word">
             {videoData.items[0]?.snippet?.description}
           </p>
