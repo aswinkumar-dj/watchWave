@@ -5,7 +5,7 @@ import SearchContainer from "./SearchContainer";
 const MainContainer = () => {
   return (
     <div className="mx-8 mt-18">
-      <VideoContainer />
+      <SearchContainer />
     </div>
   );
 };
