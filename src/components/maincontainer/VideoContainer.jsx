@@ -8,7 +8,6 @@ const VideoContainer = () => {
   useEffect(() => {
     setTimeout(() => getVideos(), 1000);
   }, []);
-  console.log("PRODUCTION API KEY =", import.meta.env.VITE_YT_API_KEY);
 
   const getVideos = async () => {
     const data = await fetch(YOUTUBE_VIDEO_API);
