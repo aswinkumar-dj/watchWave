@@ -6,23 +6,35 @@ const VideoDetails = ({ videoId }) => {
   const [videoData, setVideoData] = useState(null);
   const watchVideoUrl = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${YT_API_KEY}`;
   useEffect(() => {
-    videoPlay();
-  }, []);
-  const videoPlay = async () => {
-    const data = await fetch(watchVideoUrl);
-    const result = await data.json();
-    console.log(result);
-    setVideoData(result);
-  };
-  if (!videoData) return null;
+    let ignore = false;
+
+    const loadVideo = async () => {
+      const data = await fetch(watchVideoUrl);
+      const result = await data.json();
+
+      if (!ignore) {
+        setVideoData(result);
+      }
+    };
+
+    loadVideo();
+
+    return () => {
+      ignore = true;
+    };
+  }, [watchVideoUrl]);
+
+  const video = videoData?.items?.[0];
+
+  if (!video) return null;
   return (
-    <div className="w-225 my-4 borderr px-2 border-white space-y-4">
+    <div className="my-4 space-y-4 px-1 sm:px-0">
       <div>
-        <h1 className="font-bold text-xl">
-          {videoData.items[0]?.snippet?.title}
+        <h1 className="text-lg font-bold leading-snug text-white sm:text-2xl">
+          {video.snippet?.title}
         </h1>
       </div>
-      <div className="flex space-x-6 text-lg text-gray-400 ">
+      <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-400 sm:text-base">
         <p>
           📈 {formatNumber(videoData.items[0]?.statistics?.viewCount)} Views{" "}
         </p>
@@ -30,28 +42,28 @@ const VideoDetails = ({ videoId }) => {
           ♥️ {formatNumber(videoData.items[0]?.statistics?.likeCount)} Likes{" "}
         </p>
       </div>
-      <div className="mt-8 bg-black/30 p-4 rounded-lg  flex justify-between items-center">
-        <p className="text-xl font-semibold">
+      <div className="mt-8 flex flex-col gap-4 rounded-2xl bg-black/30 p-4 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-lg font-semibold sm:text-xl">
           👤 {videoData.items[0]?.snippet?.channelTitle}
         </p>
         <button
-          className="bg-red-700 p-1 px-6 rounded-md hover:bg-red-500 transition-colors duration-500"
+          className="w-full rounded-md bg-red-700 px-6 py-2 font-medium transition-colors duration-300 hover:bg-red-500 sm:w-auto"
           onClick={() => {
-            subscribe === "Subscribe"
-              ? setSubscribe("Subscribed!")
-              : setSubscribe("Subscribe");
+            setSubscribe((current) =>
+              current === "Subscribe" ? "Subscribed!" : "Subscribe"
+            );
           }}
         >
           {subscribe}
         </button>
       </div>
-      <details className="collapse bg-black/30">
-        <summary className="collapse-title text-xl font-semibold">
+      <details className="collapse rounded-2xl bg-black/30">
+        <summary className="collapse-title text-lg font-semibold sm:text-xl">
           ⬇️ Description
         </summary>
-        <div className="collapse-content text-md  text-gray-400">
-          <p className="whitespace-pre-wrap wrap-break-word">
-            {videoData.items[0]?.snippet?.description}
+        <div className="collapse-content text-sm text-gray-400 sm:text-base">
+          <p className="break-words whitespace-pre-wrap">
+            {video.snippet?.description}
           </p>
         </div>
       </details>
