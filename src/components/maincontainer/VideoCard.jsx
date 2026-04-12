@@ -6,12 +6,12 @@ const VideoCard = ({ info }) => {
   const { channelTitle, title, thumbnails } = snippet;
 
   return (
-    <div className="hover:bg-black/20 rounded-xl p-1 transition-colors duration-300">
-      <div className="w-72 sm:w-64 md:w-98  m-2 cursor-pointer  overflow-hidden ">
+    <article className="h-full overflow-hidden rounded-2xl border border-white/5 bg-black/10 p-2 transition-colors duration-300 hover:bg-black/20">
+      <div className="cursor-pointer overflow-hidden">
         <img
           alt="thumbnail"
           src={thumbnails?.medium?.url}
-          className="w-full object-cover rounded-xl"
+          className="aspect-video w-full rounded-xl object-cover"
         />
 
         <div className="p-3">
@@ -27,14 +27,14 @@ const VideoCard = ({ info }) => {
               <span>{formatNumber(statistics.viewCount)} views</span>
             )}
             {statistics?.likeCount && (
-              <>
+              
                 <span>♥️{formatNumber(statistics.likeCount)} likes</span>
-              </>
+              
             )}
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

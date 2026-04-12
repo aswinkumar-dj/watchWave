@@ -3,11 +3,11 @@ import { devtools } from "zustand/middleware";
 
 const useToggleSideBar = create(
   devtools((set) => ({
-    isSideBarOpen: true,
+    isSideBarOpen: false,
     toggleSideBar: () =>
       set((state) => ({ isSideBarOpen: !state.isSideBarOpen })),
     closeSideBar: () => set({ isSideBarOpen: false }),
-  }))
+  })),
 );
 
 export default useToggleSideBar;

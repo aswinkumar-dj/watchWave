@@ -18,7 +18,7 @@ const SideBar = () => {
     "History",
   ];
   return (
-    <div className="w-50 min-w-50 shrink-0 h-screen bg-base-100 border-r border-gray-600 p-4 overflow-y-auto no-scrollbar mt-16 ">
+    <aside className="mt-16 h-[calc(100vh-4rem)] w-64 max-w-[85vw] overflow-y-auto border-r border-white/10 bg-base-100/95 p-4 shadow-xl backdrop-blur md:shadow-none">
       <div className="mb-6">
         <ul className="space-y-1">
           <a href="/">
@@ -52,7 +52,7 @@ const SideBar = () => {
           ))}
         </ul>
       </div>
-    </div>
+    </aside>
   );
 };
 export default SideBar;
