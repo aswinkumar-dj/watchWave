@@ -13,7 +13,7 @@ export function formatNumber(num) {
 }
 
 export const YOUTUBE_SEARCH_API =
-  "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+  "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 export const OFFSET_LIVE_CHAT = 20;
 var nameList = [
   "Time",
