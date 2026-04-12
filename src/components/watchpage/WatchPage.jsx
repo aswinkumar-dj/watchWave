@@ -4,6 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import VideoDetails from "./VideoDetails";
 import CommentsContainer from "./CommentsContainer";
 import LiveChat from "./LiveChat";
+import WatchPageSkeleton from "./WatchPageSkeleton";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
@@ -14,6 +15,10 @@ const WatchPage = () => {
   useEffect(() => {
     closeSideBar();
   }, [closeSideBar]);
+
+  if (!videoId) {
+    return <WatchPageSkeleton />;
+  }
 
   return (
     <div className="w-full px-3 pb-6 pt-18 sm:px-4 lg:px-6 xl:px-10">

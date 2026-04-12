@@ -26,7 +26,27 @@ const VideoDetails = ({ videoId }) => {
 
   const video = videoData?.items?.[0];
 
-  if (!video) return null;
+  if (!video) {
+    return (
+      <div className="my-4 animate-pulse space-y-4 px-1 sm:px-0">
+        <div className="h-7 w-11/12 rounded bg-base-300/60"></div>
+        <div className="h-5 w-2/5 rounded bg-base-300/40"></div>
+        <div className="rounded-2xl bg-black/20 p-4">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="h-6 w-40 rounded bg-base-300/50"></div>
+            <div className="h-10 w-36 rounded bg-base-300/40"></div>
+          </div>
+        </div>
+        <div className="space-y-3 rounded-2xl bg-black/20 p-4">
+          <div className="h-5 w-32 rounded bg-base-300/50"></div>
+          <div className="h-4 w-full rounded bg-base-300/40"></div>
+          <div className="h-4 w-10/12 rounded bg-base-300/30"></div>
+          <div className="h-4 w-9/12 rounded bg-base-300/30"></div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="my-4 space-y-4 px-1 sm:px-0">
       <div>

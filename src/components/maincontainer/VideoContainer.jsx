@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { YOUTUBE_VIDEO_API } from "../../utils/constants";
 import VideoCard from "./VideoCard";
+import FeedSkeleton from "./FeedSkeleton";
 import { Link } from "react-router-dom";
 
 const VideoContainer = () => {
@@ -22,11 +23,7 @@ const VideoContainer = () => {
   }, []);
 
   if (videos.length === 0) {
-    return (
-      <div className="mx-auto max-w-[1600px] py-12 text-center text-lg text-gray-400">
-        Loading...
-      </div>
-    );
+    return <FeedSkeleton />;
   }
 
   return (

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { YT_API_KEY } from "../../utils/constants";
+import FeedSkeleton from "./FeedSkeleton";
 import VideoCard from "./VideoCard";
 
 const SearchContainer = () => {
@@ -29,11 +30,7 @@ const SearchContainer = () => {
   }, []);
 
   if (searchVideos.length === 0) {
-    return (
-      <div className="mx-auto max-w-[1600px] px-3 pb-6 pt-18 text-center text-lg text-gray-400 sm:px-4 lg:px-6 xl:px-8">
-        Loading...
-      </div>
-    );
+    return <FeedSkeleton padded />;
   }
 
   return (
